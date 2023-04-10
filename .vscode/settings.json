@@ -1,0 +1,70 @@
+{
+    // node_modules配下のTypeScriptを使用する
+    "typescript.tsdk": "./node_modules/typescript/lib",
+    
+    // 規定の検証を無効（ESLintとの重複を避ける）
+    "javascript.validate.enable": false,
+    "typescript.validate.enable": true,
+    "html.validate.scripts": false,
+    "html.validate.styles": false,
+    
+    // ESLintのcodeActionOnSaveとの競合を避ける
+    "editor.formatOnSave": false,
+
+    // FormatterをESLint(Prettier)にする
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[scss]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+
+    // Vetorの設定
+    "vetur.experimental.templateInterpolationService": true,
+    "vetur.validation.script": true,
+    "vetur.validation.style": false,
+    "vetur.validation.template": false,
+
+    // ESLintの設定
+    "editor.codeActionsOnSaveTimeout": 2000,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true,
+        "source.fixAll.stylelint": true
+    },
+    "eslint.format.enable": true,
+
+    // vue, javascriptは有効化されているため個別に有効化
+    "eslint.validate": [
+        "typescript"
+    ],
+
+    // Code Spell Checkerの設定
+    "cSpell.words": ["vuex"],
+    "cSpell.enableFiletypes": [
+        "css",
+        "html",
+        "javascript",
+        "json",
+        "markdown",
+        "scss",
+        "text",
+        "typescript",
+        "vue"
+    ],
+    "cSpell.languageSettings": [
+        {
+            "languageId": "vue",
+            "dictionaries": [
+                "html",
+                "fonts",
+                "typescript",
+                "node",
+                "css"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "recommendations": [
+        "eamodio.gitlens",
+        "pflannery.vscode-versionlens",
+        "bradgashler.htmltagwrap",
+        "formulahendry.auto-close-tag",
+        "formulahendry.auto-rename-tag",
+        "ecmel.vscode-html-css",
+        "octref.vetur",
+        "dariofuzinato.vue-peek",
+        "coenraads.bracket-pair-colorizer-2",
+        "wmaurer.change-case",
+        "streetsidesoftware.code-spell-checker",
+        "whtouche.vscode-js-console-utils",
+        "visualstudioexptteam.vscodeintellicode",
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "stylelint.vscode-stylelint",
+        "msjsdiag.debugger-for-chrome",
+        "ms-vsliveshare.vsliveshare"
+    ]
+}

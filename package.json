@@ -7,14 +7,21 @@
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
     "test:e2e": "vue-cli-service test:e2e",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lint:scss": "stylelint ./src/**/*.{vue, scss} --fix"
   },
   "dependencies": {
+    "@vue/composition-api": "1.0.0-beta.8",
+    "axios": "0.19.2",
     "core-js": "^3.6.4",
+    "material-design-icons-iconfont": "^5.0.1",
+    "roboto-fontface": "0.10.0",
+    "vee-validate": "3.2.5",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.2",
     "vue-property-decorator": "^8.3.0",
     "vue-router": "^3.1.5",
+    "vuetify": "^2.2.15",
     "vuex": "^3.1.2"
   },
   "devDependencies": {
@@ -36,18 +43,35 @@
     "eslint-plugin-prettier": "^3.1.1",
     "eslint-plugin-vue": "^6.1.2",
     "lint-staged": "^9.5.0",
+    "mocker-api": "2.0.0",
     "prettier": "^1.19.1",
-    "sass": "^1.25.0",
-    "sass-loader": "^8.0.2",
+    "sass": "~1.32.0",
+    "sass-loader": "^10.0.0",
+    "stylelint": "13.2.0",
+    "stylelint-config-recommended-scss": "4.2.0",
+    "stylelint-order": "4.0.0",
+    "stylelint-scss": "3.14.2",
+    "stylelint-webpack-plugin": "1.2.3",
     "typescript": "~3.7.5",
-    "vue-template-compiler": "^2.6.11"
+    "vue-cli-plugin-vuetify": "~2.0.5",
+    "vue-template-compiler": "^2.6.11",
+    "vuetify-loader": "^1.4.3"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,vue,ts,tsx}": [
-      "vue-cli-service lint",
+    "*.{js,ts}": [
+      "npm run lint",
+      "git add"
+    ],
+    "*.vue": [
+      "npm run lint",
+      "npm run lint:scss",
+      "git add"
+    ],
+    "*.scss": [
+      "npm run lint:scss",
       "git add"
     ]
   }
